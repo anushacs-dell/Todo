@@ -1,0 +1,34 @@
+{% extends "common.html" %}
+{% block section %}
+<div style="padding-inline: 3em;">
+    <h4>Todo Items:</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Detail</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in todos %}
+            <tr>
+                <td>{{ i.title }}</td>
+                <td>{{ i.detail }}</td>
+                <td>{{ i.startdate }}</td>
+                <td>{{ i.enddate }}</td>
+                <td>
+                <a href="{% url "remove_todo" i.id%}"><button type="submit" class="btn btn-danger">Delete</button></a>
+              
+               
+                <a href="{% url "edits" i.id%}"><button type="submit" class="btn btn-success">Edit</button></a>
+                </td>
+            </tr>
+           
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock section %}

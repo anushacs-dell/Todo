@@ -1,0 +1,17 @@
+{% extends "common.html" %}
+{% block title %}Signup{% endblock title %}
+{% block section %}
+<section>
+    <div>
+        <form method=post>
+                {% csrf_token %}
+                <input type='text' placeholder='Enter username' name='username'>
+                <input type='text' placeholder='Enter email' name='email'>
+                <input type='password' placeholder='Enter password' name='password'>
+                <button type='submit'>Submit</button>
+        </form>
+    </div>
+</section>
+
+
+{% endblock section %}

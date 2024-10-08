@@ -1,0 +1,16 @@
+{% extends "common.html" %}
+{% block title %}calculator{% endblock title %}
+{% block section %}
+<div>
+    <form method=post>
+        {% csrf_token %}
+        <input type='text' placeholder='Enter number' name='num1'>
+        <input type='text' placeholder='Enter operation' name='operation'>
+        <input type='text' placeholder='Enter number' name='num2'>
+        <button type='submit'>submit</button>
+    </form>
+    {% if result is not None %}
+    <h4 class='result'>Result:{{result}}</h4>
+    {% endif %}
+</div>
+{% endblock section %}

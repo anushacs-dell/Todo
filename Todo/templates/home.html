@@ -1,0 +1,33 @@
+{% extends "common.html" %}
+{% block title %}home{% endblock title %}
+{% block section %}
+<section>
+    <h4 style="text-align: center;">Create Todo</h4>
+    <div>
+        <form method=post style="padding-inline: 30em; padding-block: 2em;">
+
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" name='title' class="form-control" id="exampleFormControlInput1" placeholder="Enter title">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Detail</label>
+                <input type="text" name='detail' class="form-control" id="exampleFormControlInput1" placeholder="Enter detail">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+                <input type="date" name='startdate' class="form-control" id="exampleFormControlInput1" placeholder="Enter start date">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">End Date</label>
+                <input type="date" name='enddate' class="form-control" id="exampleFormControlInput1" placeholder="Enter end date">
+              </div>
+            <a href="{% url "listing" %}"></a><button type='submit' class="btn btn-success">Submit</button>
+        </form>
+    </div>
+
+
+<a href="{% url "logout" %}">Logout</a>
+</section>
+{% endblock section %}
